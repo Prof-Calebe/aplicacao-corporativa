@@ -11,5 +11,8 @@
                 <echo>Letter @{letter}</echo>  
             </sequential>  
         </for>
+        <dirset id="dist.contents" dir="."/>
+        <property name="prop.dist.contents" refid="dist.contents"/>
+        <echo>${prop.dist.contents}</echo>
     </target>
 </project>
