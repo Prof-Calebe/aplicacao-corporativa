@@ -2,10 +2,10 @@
 <project name="aplicacao-corporativa" default="default" basedir=".">
     <description>Builds, tests, and runs projects inside this directory.</description>
     <target name="default">
-    <!-- <ant antfile="${dirset}/build.xml"/> -->
         <dirset dir="." id="dirset">
         </dirset>
-        <echo message="${dirset}"/>
+        <echo>${dirset}</echo>
+
         <dirset id="dist.contents" dir="."/>
         <property name="prop.dist.contents" refid="dist.contents"/>
         <echo>${prop.dist.contents}</echo>
