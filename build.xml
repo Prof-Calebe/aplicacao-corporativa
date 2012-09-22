@@ -6,5 +6,10 @@
         <dirset dir="." id="dirset">
         </dirset>
         <echo message="${dirset}"/>
+        <for list="1,2,3,4,5" param="letter">  
+            <sequential>  
+                <echo>Letter @{letter}</echo>  
+            </sequential>  
+        </for>
     </target>
 </project>
