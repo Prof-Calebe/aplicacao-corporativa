@@ -9,7 +9,7 @@
 
     <property name="directory" value=""/>
 
-    <target name="test">
+    <target name="default">
         <echo message="Compiling these projects:"/>
         <ac:foreach target="list.dirs" param="dir.name">
             <path>
