@@ -9,7 +9,7 @@
             <exclude name="**/**"/>
         </dirset>
         <property name="prop.project.dir" refid="project.dir"/>
-        <echo>${prop.dist.contents}</echo>
+        <echo>${prop.project.dir}</echo>
         
     </target>
     
