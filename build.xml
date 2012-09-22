@@ -6,11 +6,6 @@
         <dirset dir="." id="dirset">
         </dirset>
         <echo message="${dirset}"/>
-        <for list="1,2,3,4,5" param="letter">  
-            <sequential>  
-                <echo>Letter @{letter}</echo>  
-            </sequential>  
-        </for>
         <dirset id="dist.contents" dir="."/>
         <property name="prop.dist.contents" refid="dist.contents"/>
         <echo>${prop.dist.contents}</echo>
