@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="aplicacao-corporativa" default="default" basedir=".">
+    
     <description>Builds, tests, and runs projects inside this directory.</description>
+    
     <target name="default">
-        <dirset dir="." id="dirset">
+        
+        <dirset id="project.dir" dir="." >
+            <exclude name="**/**"/>
         </dirset>
-        <echo>${dirset}</echo>
-
-        <dirset id="dist.contents" dir="."/>
-        <property name="prop.dist.contents" refid="dist.contents"/>
+        <property name="prop.project.dir" refid="project.dir"/>
         <echo>${prop.dist.contents}</echo>
+        
     </target>
+    
 </project>
