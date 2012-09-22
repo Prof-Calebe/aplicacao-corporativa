@@ -2,6 +2,12 @@
 <project name="aplicacao-corporativa" default="default" basedir="." xmlns:ac="antlib:net.sf.antcontrib">
     
     <description>Builds, tests, and runs projects inside this directory.</description>
+
+    <property name="build.dir" value="build"/>
+    <property name="build.generated.dir" value="build/generated"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="build.classes.excludes" value="**/*.java,**/*.form,**/.nbattrs"/>
+    <property name="dist.jar" value="dist/Enterprise Application.ear"/>
     
     <taskdef uri="antlib:net.sf.antcontrib"
              resource="net/sf/antcontrib/antlib.xml"
