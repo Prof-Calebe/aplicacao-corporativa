@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="aplicacao-corporativa" default="test" basedir="." xmlns:ac="antlib:net.sf.antcontrib">
+<project name="aplicacao-corporativa" default="default" basedir="." xmlns:ac="antlib:net.sf.antcontrib">
     
     <description>Builds, tests, and runs projects inside this directory.</description>
     
-    <target name="default">
-        <dirset id="project.dir" dir="." >
-            <exclude name="**/**"/>
-        </dirset>
-        <property name="prop.project.dir" refid="project.dir"/>
-        <echo>${prop.project.dir}</echo>
-    </target>
+    <taskdef uri="antlib:net.sf.antcontrib"
+             resource="net/sf/antcontrib/antlib.xml"
+             classpath="./ant-contrib-1.0b3.jar"/>
 
     <property name="directory" value=""/>
 
     <target name="test">
-        <echo message="Folders in the directory are:"/>
+        <echo message="Compiling these projects:"/>
         <ac:foreach target="list.dirs" param="dir.name">
             <path>
                 <dirset dir="${basedir}" includes="*"/>
@@ -25,8 +21,8 @@
     <target name="list.dirs">
         <ac:var name="directory" unset="true"/>
         <basename property="directory" file="${dir.name}"/>
-        <echo message="Absolute Path : ${dir.name}"/>
-        <echo message="Directory     : ${directory}"/>
+        <echo message="--- Project ${directory} ---"/>
+        <ant antfile="${directory}/build.xml"/>
     </target>
     
 </project>
