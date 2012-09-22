@@ -4,7 +4,7 @@
     <target name="default">
     <!-- <ant antfile="${dirset}/build.xml"/> -->
         <dirset dir="." id="dirset">
-            <echo message="${dirset}"/>
         </dirset>
+        <echo message="${dirset}"/>
     </target>
 </project>
