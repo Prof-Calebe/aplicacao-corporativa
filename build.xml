@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="aplicacao-corporativa" default="default" basedir=".">
     <description>Builds, tests, and runs projects inside this directory.</description>
+    <target name="default">
     <!-- <ant antfile="${dirset}/build.xml"/> -->
-    <dirset dir="." id="dirset"/>
-    <echo message="${dirset}"/>
+        <dirset dir="." id="dirset">
+            <echo message="${dirset}"/>
+        </dirset>
+    </target>
 </project>
