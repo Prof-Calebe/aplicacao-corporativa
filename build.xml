@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="aplicacao-corporativa" default="default" basedir=".">
+<project name="aplicacao-corporativa" default="default" basedir="." xmlns:ac="antlib:net.sf.antcontrib">
     
     <description>Builds, tests, and runs projects inside this directory.</description>
     
     <target name="default">
-        
         <dirset id="project.dir" dir="." >
             <exclude name="**/**"/>
         </dirset>
         <property name="prop.project.dir" refid="project.dir"/>
         <echo>${prop.project.dir}</echo>
-        
+    </target>
+
+    <property name="directory" value=""/>
+
+    <target name="test">
+        <echo message="Folders in the directory are:"/>
+        <ac:foreach target="list.dirs" param="dir.name">
+            <path>
+                <dirset dir="${basedir}" includes="*"/>
+            </path>
+        </ac:foreach>
+    </target>
+
+    <target name="list.dirs">
+        <ac:var name="directory" unset="true"/>
+        <basename property="directory" file="${dir.name}"/>
+        <echo message="Absolute Path : ${dir.name}"/>
+        <echo message="Directory     : ${directory}"/>
     </target>
     
 </project>
