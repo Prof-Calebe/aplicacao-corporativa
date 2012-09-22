@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="aplicacao-corporativa" default="default" basedir="." xmlns:ac="antlib:net.sf.antcontrib">
+<project name="aplicacao-corporativa" default="test" basedir="." xmlns:ac="antlib:net.sf.antcontrib">
     
     <description>Builds, tests, and runs projects inside this directory.</description>
     
