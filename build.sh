@@ -7,7 +7,7 @@ echo $classpath
 for i in * ; do
   if [ -d "$i" ]; then
     cd "$i"
-    ant
+    ant -Dlibs.CopyLibs.classpath=../org-netbeans-modules-java-j2seproject-copylibstask.jar
 
     RET=$?
     if [ ! "$RET" = "0" ]; then
