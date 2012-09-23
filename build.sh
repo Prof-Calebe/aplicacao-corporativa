@@ -4,10 +4,12 @@ CLASSPATH=$CLASSPATH:`pwd`/ant-contrib-1.0b3.jar:`pwd`/org-netbeans-modules-java
 export CLASSPATH
 echo "CLASSPATH:"$CLASSPATH
 
+CopyLibs=`pwd`/org-netbeans-modules-java-j2seproject-copylibstask.jar
+
 for i in * ; do
   if [ -d "$i" ]; then
     cd "$i"
-    ant -Dlibs.CopyLibs.classpath=`pwd`/org-netbeans-modules-java-j2seproject-copylibstask.jar \
+    ant -Dlibs.CopyLibs.classpath="$CopyLibs" \
         -Dj2ee.server.home="../Enterprise Application"
 
     RET=$?
