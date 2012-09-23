@@ -18,6 +18,7 @@ for i in * ; do
     else
         TARGET=dist
     fi
+    TARGET=""
 
     echo " "
     echo "----- $i -----"
