@@ -1,4 +1,4 @@
 aplicacao-corporativa
 =====================
 
-Disciplina: Técnicas De Programação Aplicada 3
+Disciplina: Projeto Interdisciplinar 2
