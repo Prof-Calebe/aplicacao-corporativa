@@ -1,6 +1,6 @@
 #!/bin/bash
 
-classpath=$classpath:$pwd/ant-contrib-1.0b3.jar:$pwd/org-netbeans-modules-java-j2seproject-copylibstask.jar
+classpath=$classpath:`pwd`/ant-contrib-1.0b3.jar:`pwd`/org-netbeans-modules-java-j2seproject-copylibstask.jar
 export classpath
 echo $classpath
 
