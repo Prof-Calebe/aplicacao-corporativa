@@ -7,7 +7,7 @@ echo "CLASSPATH:"$CLASSPATH
 for i in * ; do
   if [ -d "$i" ]; then
     cd "$i"
-    ant -Dlibs.CopyLibs.classpath=../org-netbeans-modules-java-j2seproject-copylibstask.jar \
+    ant -Dlibs.CopyLibs.classpath=`pwd`/org-netbeans-modules-java-j2seproject-copylibstask.jar \
         -Dj2ee.server.home="../Enterprise Application"
 
     RET=$?
