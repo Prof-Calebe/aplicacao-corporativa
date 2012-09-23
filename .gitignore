@@ -6,3 +6,7 @@
 /Enterprise Application/Enterprise Application-war/dist/
 /Java Application/build/
 /Java Application/dist/
+/Enterprise Application/nbproject/private/
+/Java Application/nbproject/private/
+/Enterprise Application/Enterprise Application-war/nbproject/private/
+/Enterprise Application/Enterprise Application-ejb/nbproject/private/
