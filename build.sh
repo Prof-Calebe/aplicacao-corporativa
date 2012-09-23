@@ -1,10 +1,10 @@
 #!/bin/bash
 
-CLASSPATH=$CLASSPATH:`pwd`/ant-contrib-1.0b3.jar:`pwd`/org-netbeans-modules-java-j2seproject-copylibstask.jar
+CopyLibs=`pwd`/org-netbeans-modules-java-j2seproject-copylibstask.jar
+
+CLASSPATH=$CLASSPATH:`pwd`/ant-contrib-1.0b3.jar:$CopyLibs
 export CLASSPATH
 echo "CLASSPATH:"$CLASSPATH
-
-CopyLibs=`pwd`/org-netbeans-modules-java-j2seproject-copylibstask.jar
 
 for i in * ; do
   if [ -d "$i" ]; then
