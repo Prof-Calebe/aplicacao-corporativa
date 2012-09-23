@@ -10,7 +10,7 @@ echo "CLASSPATH:"$CLASSPATH
 echo " "
 echo "Compiling these projects:"
 for i in * ; do
-  if [ -d "$i" ]; then
+  if [ -d "$i" ] && [ ! "$i" = "lib" ]; then
     cd "$i"
 
     if [ -f "manifest.mf" ]; then
@@ -22,7 +22,7 @@ for i in * ; do
     echo " "
     echo "----- $i -----"
     ant -Dlibs.CopyLibs.classpath="$CopyLibs" \
-        -Dj2ee.server.home="$_PWD/glassfish-libs" $TARGET
+        -Dj2ee.server.home="$_PWD" $TARGET
     RET=$?
     if [ ! "$RET" = "0" ]; then
         exit $RET
