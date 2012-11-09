@@ -15,4 +15,8 @@ public class Example {
     public Integer getNumber() {
         return number;
     }
+    
+    public static void main(String[] args) {
+        
+    }
 }
