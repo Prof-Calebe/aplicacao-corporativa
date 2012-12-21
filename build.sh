@@ -9,12 +9,12 @@ echo "CLASSPATH:"$CLASSPATH
 
 wget -nv -T 10 -t 0 "http://dlc.sun.com.edgesuite.net/glassfish/3.1.2/release/glassfish-3.1.2.zip"
 # já cria um diretório chamado glassfish3
-unzip glassfish-3.1.2.zip
+unzip -q glassfish-3.1.2.zip
 
 echo " "
 echo "Compiling these projects:"
 for i in * ; do
-  if [ -d "$i" ] && [ ! "$i" = "lib" ]; then
+  if [ -d "$i" ] && [ ! "$i" = "lib" ] && [ ! "$i" = "glassfish3" ]; then
     cd "$i"
 
     if [ -f "manifest.mf" ]; then
