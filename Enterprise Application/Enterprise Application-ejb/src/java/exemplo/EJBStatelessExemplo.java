@@ -7,7 +7,7 @@ import javax.ejb.Stateless;
  * @author Calebe de Paula Bianchini
  */
 @Stateless
-public class EJBExemplo implements EJBExemploInterface {
+public class EJBStatelessExemplo implements EJBExemploInterface {
 
     @Override
     public String metodo(double d, int a, String s) {
