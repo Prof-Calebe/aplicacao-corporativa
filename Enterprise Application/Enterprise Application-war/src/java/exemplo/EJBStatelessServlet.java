@@ -1,9 +1,10 @@
+package exemplo;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import exemplo.EJBExemploInterface;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;

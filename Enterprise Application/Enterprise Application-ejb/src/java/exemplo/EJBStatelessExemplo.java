@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
  *
  * @author Calebe de Paula Bianchini
  */
-@Stateless
+@Stateless(mappedName = "ejb/EJBStatelessExemplo")
 public class EJBStatelessExemplo implements EJBExemploInterface {
 
     @Override
