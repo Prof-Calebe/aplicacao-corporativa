@@ -10,7 +10,7 @@ import javax.ejb.Remote;
 @Remote
 public interface EJBStatefulExemploInterface {
 
-    void set(ObjetoExemploInterface objeto) throws ObjetoNotNullException;
+    void set(ObjetoExemplo objeto) throws ObjetoNotNullException;
     
-    ObjetoExemploInterface get();
+    ObjetoExemplo get();
 }

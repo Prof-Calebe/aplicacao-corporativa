@@ -4,6 +4,7 @@
  */
 package exemplo;
 
+import exemplo.exceptions.ObjetoNotNullException;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Properties;
@@ -50,11 +51,14 @@ public class Run {
             System.out.println("\nResultado EJBStatelessExemploInterface:");
             System.out.println(beanStateless.metodo(d, i, s));
 
-            EJBStatefulExemploInterface beanStateful = (EJBStatefulExemploInterface) ctx.lookup("ejb/EJBStatelessExemplo");
-            beanStateful.set(new ExempleDesktop(s, i, d));
+            EJBStatefulExemploInterface beanStateful = (EJBStatefulExemploInterface) ctx.lookup("ejb/EJBStatefulExemplo");
+            beanStateful.set(new ObjetoExemplo(s, i, d));
             System.out.println("\nResultado EJBStatefulExemploInterface:");
             System.out.println(beanStateful.get());
 
+        } catch (ObjetoNotNullException e) {
+            System.err.println("Objeto no EJBStatefulExemploInterface já está instanciado.");
+            e.printStackTrace(System.err);
         } catch (IOException | NamingException e) {
             System.err.println("Erro ao tentar achar EBJs:");
             e.printStackTrace(System.err);

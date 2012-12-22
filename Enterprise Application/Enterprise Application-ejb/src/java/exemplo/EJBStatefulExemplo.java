@@ -10,23 +10,23 @@ import javax.ejb.Stateful;
 @Stateful(mappedName = "ejb/EJBStatefulExemplo")
 public class EJBStatefulExemplo implements EJBStatefulExemploInterface {
 
-    protected ObjetoExemploInterface objeto;
+    protected ObjetoExemplo objeto;
 
     public EJBStatefulExemplo() {
         objeto = null;
     }
 
     @Override
-    public void set(ObjetoExemploInterface objeto) throws ObjetoNotNullException {
-        if (objeto == null) {
+    public void set(ObjetoExemplo objeto) throws ObjetoNotNullException {
+        if (this.objeto == null) {
             this.objeto = objeto;
         } else {
-            throw new ObjetoNotNullException();
+            throw new ObjetoNotNullException("O objeto já foi instanciando!");
         }
     }
 
     @Override
-    public ObjetoExemploInterface get() {
+    public ObjetoExemplo get() {
         return objeto;
     }
 }

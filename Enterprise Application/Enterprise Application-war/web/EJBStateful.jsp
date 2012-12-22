@@ -22,9 +22,9 @@
                     <td>Int</td>
                 </tr>
                 <tr>
-                    <td><input name="string_value" type="text" size="50"/></td>
-                    <td><input name="double_value" type="text" size="5"/></td>
-                    <td><input name="int_value" type="text" size="2"/></td>
+                    <td><input name="string_value" type="text" size="50" value="string"/></td>
+                    <td><input name="double_value" type="text" size="5" value="2"/></td>
+                    <td><input name="int_value" type="text" size="2" value="2"/></td>
                 </tr>
             </table>
             <input type="submit" value="Enviar"/>

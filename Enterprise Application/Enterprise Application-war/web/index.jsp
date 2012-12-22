@@ -14,6 +14,6 @@
     <body>
         <h1>Simple EJB example</h1>
         <a href="EJBStateless.jsp">EJB Stateless</a><br/>
-        <a href="">EJB Statefull</a><br/>
+        <a href="EJBStateful.jsp">EJB Statefull</a><br/>
     </body>
 </html>

@@ -59,7 +59,7 @@ public class EJBStatefulServlet extends HttpServlet {
             out.println("<body>");
 
             try {
-                ejb.set(new ExempleWeb(s, i, d));
+                ejb.set(new ObjetoExemplo(s, i, d));
             } catch (ObjetoNotNullException e) {
                 errorMessage = "O objeto já foi instanciado e seus valores são: " + ejb.get();
             }

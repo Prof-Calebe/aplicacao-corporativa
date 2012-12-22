@@ -4,7 +4,7 @@
  */
 package example;
 
-import exemplo.ExempleDesktop;
+import exemplo.ObjetoExemplo;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -16,9 +16,9 @@ public class ExampleTest {
 
     @Test
     public void ConstructorTest() {
-        ExempleDesktop e = new ExempleDesktop("teste", 2, 2);
-        assertEquals("teste", e.getString());
-        assertEquals(new Integer(2), new Integer(e.getInt()));
-        assertEquals(new Double(2), new Double(e.getDouble()));
+        ObjetoExemplo obj = new ObjetoExemplo("teste", 2, 2);
+        assertEquals("teste", obj.getString());
+        assertEquals(new Integer(2), new Integer(obj.getInt()));
+        assertEquals(new Double(2), new Double(obj.getDouble()));
     }
 }
