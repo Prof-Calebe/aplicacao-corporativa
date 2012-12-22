@@ -4,11 +4,17 @@
  */
 package exemplo.exceptions;
 
-import java.rmi.RemoteException;
+import javax.ejb.ApplicationException;
+import javax.ejb.EJBException;
 
 /**
  *
  * @author Calebe de Paula Bianchini
  */
-public class ObjetoNotNullException extends RemoteException {
+@ApplicationException
+public class ObjetoNotNullException extends EJBException {
+
+    public ObjetoNotNullException(String message) {
+        super(message);
+    }
 }
