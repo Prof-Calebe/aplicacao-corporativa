@@ -6,6 +6,7 @@ package example;
 
 import exemplo.EJBExemploInterface;
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Properties;
 import java.util.Scanner;
 import javax.naming.InitialContext;
@@ -35,7 +36,7 @@ public class Run {
                 System.out.println("String:");
                 s = in.next();
                 ok = true;
-            } catch (NumberFormatException e) {
+            } catch (InputMismatchException e) {
                 System.err.println("Algum número informado é inválido!");
                 System.out.println("Digite novamente:");
             }
