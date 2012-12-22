@@ -2,10 +2,8 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package example;
+package exemplo;
 
-import exemplo.EJBStatefulExemploInterface;
-import exemplo.EJBStatelessExemploInterface;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Properties;
@@ -53,7 +51,7 @@ public class Run {
             System.out.println(beanStateless.metodo(d, i, s));
 
             EJBStatefulExemploInterface beanStateful = (EJBStatefulExemploInterface) ctx.lookup("ejb/EJBStatelessExemplo");
-            beanStateful.set(new Example(s, i, d));
+            beanStateful.set(new ExempleDesktop(s, i, d));
             System.out.println("\nResultado EJBStatefulExemploInterface:");
             System.out.println(beanStateful.get());
 

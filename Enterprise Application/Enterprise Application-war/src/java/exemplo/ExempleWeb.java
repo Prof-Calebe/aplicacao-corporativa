@@ -1,18 +1,16 @@
-package example;
-
-import exemplo.ObjetoExemploInterface;
+package exemplo;
 
 /**
  *
  * @author Calebe de Paula Bianchini
  */
-public class Example implements ObjetoExemploInterface {
+public class ExempleWeb implements ObjetoExemploInterface {
 
     protected String s;
     protected int i;
     protected double d;
 
-    public Example(String s, int i, double d) {
+    public ExempleWeb(String s, int i, double d) {
         this.s = s;
         this.i = i;
         this.d = d;
@@ -35,6 +33,6 @@ public class Example implements ObjetoExemploInterface {
 
     @Override
     public String toString() {
-        return "Example{" + "s=" + s + ", i=" + i + ", d=" + d + '}';
+        return "ExampleWeb{" + "s=" + s + ", i=" + i + ", d=" + d + '}';
     }
 }

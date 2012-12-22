@@ -9,12 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>EJB Stateless</title>
+        <title>EJB Stateful</title>
     </head>
     <body>
-        <h1>EJB Stateless</h1>
+        <h1>EJB Stateful</h1>
         <h2>Entre com os valores:</h2>
-        <form action="EJBStatelessServlet" method="post">
+        <form action="EJBStatefulServlet" method="post">
             <table>
                 <tr>
                     <td>String</td>
