@@ -15,7 +15,9 @@ public class ExampleTest {
 
     @Test
     public void ConstructorTest() {
-        Example e = new Example(1);
-        assertEquals(new Integer(1), e.getNumber());
+        Example e = new Example("teste", 2, 2);
+        assertEquals("teste", e.getString());
+        assertEquals(new Integer(2), new Integer(e.getInt()));
+        assertEquals(new Double(2), new Double(e.getDouble()));
     }
 }

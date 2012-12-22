@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class EJBStatelessServlet extends HttpServlet {
 
     @EJB
-    private EJBExemploInterface ejb;
+    private EJBStatelessExemploInterface ejb;
 
     /**
      * Processes requests for both HTTP

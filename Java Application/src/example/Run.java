@@ -4,7 +4,8 @@
  */
 package example;
 
-import exemplo.EJBExemploInterface;
+import exemplo.EJBStatefulExemploInterface;
+import exemplo.EJBStatelessExemploInterface;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Properties;
@@ -46,11 +47,18 @@ public class Run {
             Properties props = new Properties();
             props.load(new java.io.FileInputStream("jndi.properties"));
             InitialContext ctx = new InitialContext(props);
-            EJBExemploInterface bean = (EJBExemploInterface) ctx.lookup("ejb/EJBStatelessExemplo");
-            System.out.println("Resultado:");
-            System.out.println(bean.metodo(d, i, s));
+
+            EJBStatelessExemploInterface beanStateless = (EJBStatelessExemploInterface) ctx.lookup("ejb/EJBStatelessExemplo");
+            System.out.println("\nResultado EJBStatelessExemploInterface:");
+            System.out.println(beanStateless.metodo(d, i, s));
+
+            EJBStatefulExemploInterface beanStateful = (EJBStatefulExemploInterface) ctx.lookup("ejb/EJBStatelessExemplo");
+            beanStateful.set(new Example(s, i, d));
+            System.out.println("\nResultado EJBStatefulExemploInterface:");
+            System.out.println(beanStateful.get());
+
         } catch (IOException | NamingException e) {
-            System.err.println("Erro ao tentar achar EJBExemploInterface:");
+            System.err.println("Erro ao tentar achar EBJs:");
             e.printStackTrace(System.err);
         }
     }
