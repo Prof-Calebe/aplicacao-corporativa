@@ -16,10 +16,21 @@ import javax.persistence.Id;
  */
 @Entity
 public class Contato implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String nome;
+    private String telefone;
+
+    Contato() {
+    }
+
+    public Contato(String nome, String telefone) {
+        this.nome = nome;
+        this.telefone = telefone;
+    }
 
     public Long getId() {
         return id;
@@ -27,6 +38,22 @@ public class Contato implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     @Override
@@ -51,7 +78,6 @@ public class Contato implements Serializable {
 
     @Override
     public String toString() {
-        return "exemplo.jpa.Contato[ id=" + id + " ]";
+        return "Contato{" + "id=" + id + ", nome=" + nome + ", telefone=" + telefone + '}';
     }
-    
 }
