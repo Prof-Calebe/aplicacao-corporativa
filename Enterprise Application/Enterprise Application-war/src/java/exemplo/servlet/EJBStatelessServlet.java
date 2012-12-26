@@ -1,13 +1,13 @@
+package exemplo.servlet;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package exemplo.jpa;
 
-import exemplo.jpa.facade.ContatoFacadeLocal;
+import exemplo.EJBStatelessExemploInterface;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,13 +17,13 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Minha casa
+ * @author Calebe de Paula Bianchini
  */
-@WebServlet(name = "ContatoServlet", urlPatterns = {"/ContatoServlet"})
-public class ContatoServlet extends HttpServlet {
+@WebServlet(name = "EJBStatelessServlet", urlPatterns = {"/EJBStatelessServlet"})
+public class EJBStatelessServlet extends HttpServlet {
 
     @EJB
-    private ContatoFacadeLocal contatoFacade;
+    private EJBStatelessExemploInterface ejb;
 
     /**
      * Processes requests for both HTTP
@@ -39,41 +39,34 @@ public class ContatoServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+
+        String s = null, errorMessage = null;
+        double d = 0;
+        int i = 0;
+
+        try {
+            s = request.getParameter("string_value");
+            d = Double.parseDouble(request.getParameter("double_value"));
+            i = Integer.parseInt(request.getParameter("int_value"));
+        } catch (NumberFormatException e) {
+            errorMessage = "Algum número informado é inválido!";
+        }
+
         try {
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ContatoServlet</title>");
+            out.println("<title>EJBStatelessServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Lista de Contatos</h1>");
-
-            out.println("<h2>Cadastrar Contatos</h2>");
-            out.println("<form action=\"ContatoServlet\" method=\"post\">");
-            out.println("<table>\n<tr>");
-            out.println("<td>Nome</td>");
-            out.println("<td>Telefone</td>");
-            out.println("</tr>\n<tr>");
-            out.println("<td><input name=\"nome_value\" type=\"text\" size=\"50\" value=\"nome\"/></td>");
-            out.println("<td><input name=\"telefone_value\" type=\"text\" size=\"14\" value=\"5511999999999\"/></td>");
-            out.println("</tr>\n</table>");
-            out.println("<input name=\"btn_cadastrar\" type=\"submit\" value=\"Cadastrar\"/>\n</form>");
-            if (request.getParameter("btn_cadastrar") != null && request.getParameter("btn_cadastrar").equals("Cadastrar")) {
-                try {
-                    out.println("<font color=\"red\">");
-                    Contato c = new Contato(request.getParameter("nome_value"), request.getParameter("telefone_value"));
-                    contatoFacade.create(c);
-                    out.println("Contato cadastrado com sucesso.");
-                } catch (Exception e) {
-                    out.println("Erro ao gravar Contato.");
-                } finally {
-                    out.println("</font>");
-                }
-            }
-
-            out.println("<h2>Contatos Cadastrados</h2>");
-            List<Contato> list = contatoFacade.findAll();
-            for (Contato contato : list) {
-                out.println(contato + "<br/>");
+            if (errorMessage != null) {
+                out.println("<font color=\"red\">");
+                out.println("<h1>" + errorMessage + "</h1>");
+                out.println("</font>");
+                out.println("<a href=\"EJBStateless.jsp\">Voltar</a><br/>");
+            } else {
+                out.println("<h1>Resultado da execução do EJBStateless</h1>");
+                out.println("<p>" + ejb.metodo(d, i, s) + "</p><br/>");
+                out.println("<a href=\"index.jsp\">Inicio</a><br/>");
             }
             out.println("</body>");
             out.println("</html>");

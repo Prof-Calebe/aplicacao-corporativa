@@ -16,6 +16,6 @@
         <a href="EJBStateless.jsp">EJB Stateless</a><br/>
         <a href="EJBStateful.jsp">EJB Statefull</a><br/>
         <h1>Simple JPA example</h1>
-        <a href="ContatoServlet">Lista de Contato</a><br/>
+        <a href="ContatoJPAServlet">Lista de Contato</a><br/>
     </body>
 </html>

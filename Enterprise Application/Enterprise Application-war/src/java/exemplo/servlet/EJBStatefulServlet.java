@@ -1,9 +1,11 @@
-package exemplo;
+package exemplo.servlet;
 
 /*
  * To change this template, choose Tools | Templates and open the template in
  * the editor.
  */
+import exemplo.EJBStatefulExemploInterface;
+import exemplo.ObjetoExemplo;
 import exemplo.exceptions.ObjetoNotNullException;
 import java.io.IOException;
 import java.io.PrintWriter;
