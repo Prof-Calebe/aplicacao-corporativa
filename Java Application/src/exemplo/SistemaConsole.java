@@ -16,7 +16,7 @@ import javax.naming.NamingException;
  *
  * @author Calebe de Paula Bianchini
  */
-public class Run {
+public class SistemaConsole {
 
     public static void main(String[] args) {
 
