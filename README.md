@@ -1,9 +1,9 @@
-aplicacao-corporativa
-=====================
+Projeto Interdisciplinar 2
+==========================
 
-Disciplina: Projeto Interdisciplinar 2
+Projeto: aplicacao-corporativa
 
-- Autoria
+- Modificação dos arquivos de configuração de Autoria
 
 Para alterar a autoria:
 
@@ -14,7 +14,7 @@ Editar <i>[project]/.git/config</i> e adicionar:
     email = <e-mail>
 
 
-- Idioma do NetBeans
+- Alteração do Idioma do NetBeans
 
 Para alterar o idioma do NetBeans, existe duas formas:
 
@@ -24,7 +24,7 @@ Coloque <i>--locale en</i> ou <i>--locale pt_br</i> no final do Destino, nas opç
 
     "C:\Program Files\NetBeans 7.2.1\bin\netbeans64.exe" --locale en
 
-2. Arquivos de configuração
+2. Arquivo de configuração
 
 Modifique a opção <i>netbeans_default_options</i> no arquivo de configuração <i>[instalação]/etc/netbeans.conf</i>. Por exemplo:
 
