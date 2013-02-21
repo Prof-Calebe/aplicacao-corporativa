@@ -35,3 +35,7 @@ para
     netbeans_default_options="--locale en -J-client -J-Xss2m -J-Xms32m -J-XX:PermSize=32m -J-Dapple.laf.useScreenMenuBar=true -J-Dapple.awt.graphics.UseQuartz=true -J-Dsun.java2d.noddraw=true -J-Dsun.zip.disableMemoryMapping=true"
 
 
+- Site do Projeto no servidro de Integração Contínua
+
+[https://travis-ci.org/Prof-Calebe/aplicacao-corporativa]
+
