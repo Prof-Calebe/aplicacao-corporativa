@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
  *
  * @author Calebe de Paula Bianchini
  */
-@Stateless
+@Stateless(mappedName = "ejb/ContatoFacade")
 public class ContatoFacade extends AbstractFacade<Contato> implements ContatoFacadeLocal {
     @PersistenceContext(unitName = "Enterprise_Application-ejbPU")
     private EntityManager em;

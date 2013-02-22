@@ -72,6 +72,11 @@ public class SistemaGUI extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(" Simple JPA example "));
 
         btnContato.setText("Lista de Contato");
+        btnContato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContatoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -135,6 +140,10 @@ public class SistemaGUI extends javax.swing.JFrame {
     private void btnEJBStatelessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEJBStatelessActionPerformed
         new EJBStatelessGUI().setVisible(true);
     }//GEN-LAST:event_btnEJBStatelessActionPerformed
+
+    private void btnContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContatoActionPerformed
+        new ContatoGUI().setVisible(true);
+    }//GEN-LAST:event_btnContatoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -49,6 +49,6 @@ public class EJBStatefulGUI extends GUIBean {
             return;
         }
         beanStateful.set(new ObjetoExemplo(s, i, d));
-        JOptionPane.showConfirmDialog(this, "nResultado EJBStatefulExemploInterface: " + beanStateful.get());
+        JOptionPane.showConfirmDialog(this, "Resultado EJBStatefulExemploInterface: " + beanStateful.get());
     }
 }
