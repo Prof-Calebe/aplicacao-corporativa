@@ -6,14 +6,14 @@ package exemplo.jpa.facade;
 
 import exemplo.jpa.Contato;
 import java.util.List;
-import javax.ejb.Local;
+import javax.ejb.Remote;
 
 /**
  *
  * @author Calebe de Paula Bianchini
  */
-@Local
-public interface ContatoFacadeLocal {
+@Remote
+public interface ContatoFacadeRemote {
 
     void create(Contato contato);
 
