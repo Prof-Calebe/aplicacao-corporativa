@@ -28,6 +28,8 @@
                 </tr>
             </table>
             <input type="submit" value="Enviar"/>
+            <br/><br/>
+            <a href=".">Voltar</a>
         </form>
     </body>
 </html>

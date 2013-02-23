@@ -5,7 +5,7 @@
 package exemplo.servlet;
 
 import exemplo.jpa.Contato;
-import exemplo.jpa.facade.ContatoFacadeLocal;
+import exemplo.jpa.facade.ContatoFacadeRemote;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ContatoJPAServlet extends HttpServlet {
 
     @EJB
-    private ContatoFacadeLocal contatoFacade;
+    private ContatoFacadeRemote contatoFacade;
 
     /**
      * Processes requests for both HTTP
@@ -49,7 +49,7 @@ public class ContatoJPAServlet extends HttpServlet {
             out.println("<h1>Lista de Contatos</h1>");
 
             out.println("<h2>Cadastrar Contatos</h2>");
-            out.println("<form action=\"ContatoServlet\" method=\"post\">");
+            out.println("<form action=\"ContatoJPAServlet\" method=\"post\">");
             out.println("<table>\n<tr>");
             out.println("<td>Nome</td>");
             out.println("<td>Telefone</td>");
@@ -76,6 +76,8 @@ public class ContatoJPAServlet extends HttpServlet {
             for (Contato contato : list) {
                 out.println(contato + "<br/>");
             }
+            out.println("<br/>");
+            out.println("<a href=\".\">Voltar</a>");;
             out.println("</body>");
             out.println("</html>");
         } finally {
