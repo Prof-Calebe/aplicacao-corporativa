@@ -5,7 +5,7 @@
 package exemplo.controller;
 
 import exemplo.jpa.Contato;
-import exemplo.jpa.facade.ContatoFacade;
+import exemplo.jpa.facade.ContatoFacadeRemote;
 import java.util.List;
 import java.util.Properties;
 import javax.naming.InitialContext;
@@ -16,13 +16,13 @@ import javax.naming.InitialContext;
  */
 public class ContatoController {
 
-    private ContatoFacade contatoFacade;
+    private ContatoFacadeRemote contatoFacade;
 
     public ContatoController() throws Exception {
         Properties props = new Properties();
         props.load(new java.io.FileInputStream("jndi.properties"));
         InitialContext ctx = new InitialContext(props);
-        contatoFacade = (ContatoFacade) ctx.lookup("ejb/ContatoFacade");
+        contatoFacade = (ContatoFacadeRemote) ctx.lookup("ejb/ContatoFacade");
     }
 
     public void create(Contato entity) {

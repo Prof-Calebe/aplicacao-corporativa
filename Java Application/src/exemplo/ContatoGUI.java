@@ -4,18 +4,49 @@
  */
 package exemplo;
 
+import exemplo.controller.ContatoController;
+import exemplo.jpa.Contato;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Calebe de Paula Bianchini
  */
 public class ContatoGUI extends javax.swing.JFrame {
+    
+    private ContatoController contatoController = null;
 
     /**
      * Creates new form ContatoGUI
      */
     public ContatoGUI() {
         initComponents();
-        // TODO adicionar os valores do Facade na Tabela
+        updateTable();
+    }
+    
+    private void updateTable() {
+        try {
+            if (contatoController == null) {
+                contatoController = new ContatoController();
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao conectar com o servidor...");
+            btnCadastrar.setEnabled(false);
+            return;
+        }
+        Contato[] contatos = contatoController.findAll().toArray(new Contato[0]);
+        Object[][] objects = new Object[contatos.length][2];
+        for (int i = 0; i < contatos.length; i++) {
+            objects[i][0] = contatos[i].getNome();
+            objects[i][1] = contatos[i].getTelefone();
+        }
+        tblContatos.setModel(new javax.swing.table.DefaultTableModel(
+                objects,
+                new String[]{
+                    "Nome", "Telefone"
+                }));
+        txtNome.setText("");
+        txtTelefone.setText("");
     }
 
     /**
@@ -37,12 +68,18 @@ public class ContatoGUI extends javax.swing.JFrame {
         tblContatos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Contatos");
 
         jLabel1.setText("Nome");
 
         jLabel2.setText("Telefone");
 
         btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -115,6 +152,16 @@ public class ContatoGUI extends javax.swing.JFrame {
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((screenSize.width-416)/2, (screenSize.height-338)/2, 416, 338);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        Contato contato = new Contato(txtNome.getText(), txtTelefone.getText());
+        try {
+            contatoController.create(contato);
+            updateTable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Erro ao gravar contato: " + contato);
+        }
+    }//GEN-LAST:event_btnCadastrarActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JLabel jLabel1;
