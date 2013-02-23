@@ -15,7 +15,7 @@ import javax.persistence.Id;
  * @author Calebe de Paula Bianchini
  */
 @Entity
-public class Contato implements Serializable {
+public class Contato implements Serializable, Cloneable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -79,5 +79,10 @@ public class Contato implements Serializable {
     @Override
     public String toString() {
         return "Contato{" + "id=" + id + ", nome=" + nome + ", telefone=" + telefone + '}';
+    }
+
+    @Override
+    public Contato clone() {
+        return new Contato(this.nome, this.telefone);
     }
 }
