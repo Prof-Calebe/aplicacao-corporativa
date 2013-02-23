@@ -47,6 +47,11 @@ public class SistemaGUI extends javax.swing.JFrame {
         });
 
         btnEJBStateful.setText("EJB Stateful");
+        btnEJBStateful.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEJBStatefulActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -145,6 +150,10 @@ public class SistemaGUI extends javax.swing.JFrame {
         new ContatoGUI().setVisible(true);
     }//GEN-LAST:event_btnContatoActionPerformed
 
+    private void btnEJBStatefulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEJBStatefulActionPerformed
+        new EJBStatefulGUI().setVisible(true);
+    }//GEN-LAST:event_btnEJBStatefulActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -160,7 +169,7 @@ public class SistemaGUI extends javax.swing.JFrame {
         try {
             javax.swing.UIManager.setLookAndFeel(
                     javax.swing.UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException e) {
+        } catch (Exception e) {
             System.err.println("Erro ao iniciar JFC:");
             e.printStackTrace(System.err);
         }
@@ -170,7 +179,6 @@ public class SistemaGUI extends javax.swing.JFrame {
          * Create and display the form
          */
         java.awt.EventQueue.invokeLater(new Runnable() {
-
             @Override
             public void run() {
                 new SistemaGUI().setVisible(true);

@@ -59,7 +59,7 @@ public class SistemaConsole {
         } catch (ObjetoNotNullException e) {
             System.err.println("Objeto no EJBStatefulExemploInterface já está instanciado.");
             e.printStackTrace(System.err);
-        } catch (IOException | NamingException e) {
+        } catch (Exception e) {
             System.err.println("Erro ao tentar achar EBJs:");
             e.printStackTrace(System.err);
         }

@@ -5,6 +5,7 @@
 package exemplo;
 
 import exemplo.bean.GUIBean;
+import exemplo.exceptions.ObjetoNotNullException;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.Properties;
@@ -22,6 +23,7 @@ public class EJBStatefulGUI extends GUIBean {
 
     public EJBStatefulGUI() {
         super();
+        setTitle("EJB Stateful");
         try {
             Properties props = new Properties();
             props.load(new java.io.FileInputStream("jndi.properties"));
@@ -48,7 +50,12 @@ public class EJBStatefulGUI extends GUIBean {
             JOptionPane.showMessageDialog(this, "Algum número informado é inválido!");
             return;
         }
-        beanStateful.set(new ObjetoExemplo(s, i, d));
-        JOptionPane.showConfirmDialog(this, "Resultado EJBStatefulExemploInterface: " + beanStateful.get());
+        try {
+            beanStateful.set(new ObjetoExemplo(s, i, d));
+            JOptionPane.showMessageDialog(this, "Resultado EJBStatefulExemploInterface: " + beanStateful.get());
+        } catch (ObjetoNotNullException e) {
+            JOptionPane.showMessageDialog(this, "Resultado ja existente: " + beanStateful.get());
+        }
+
     }
 }

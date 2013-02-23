@@ -22,6 +22,7 @@ public class EJBStatelessGUI extends GUIBean {
 
     public EJBStatelessGUI() {
         super();
+        setTitle("EJB Stateless");
         try {
             Properties props = new Properties();
             props.load(new java.io.FileInputStream("jndi.properties"));
@@ -48,6 +49,6 @@ public class EJBStatelessGUI extends GUIBean {
             JOptionPane.showMessageDialog(this, "Algum número informado é inválido!");
             return;
         }
-        JOptionPane.showConfirmDialog(this, "nResultado EJBStatelessExemploInterface:: "+beanStateless.metodo(d, i, s));
+        JOptionPane.showMessageDialog(this, "Resultado EJBStatelessExemploInterface:: " + beanStateless.metodo(d, i, s));
     }
 }
