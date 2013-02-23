@@ -4,6 +4,7 @@
  */
 package example;
 
+import exemplo.ObjetoExemplo;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -15,7 +16,9 @@ public class ExampleTest {
 
     @Test
     public void ConstructorTest() {
-        Example e = new Example(1);
-        assertEquals(new Integer(1), e.getNumber());
+        ObjetoExemplo obj = new ObjetoExemplo("teste", 2, 2);
+        assertEquals("teste", obj.getString());
+        assertEquals(new Integer(2), new Integer(obj.getInt()));
+        assertEquals(new Double(2), new Double(obj.getDouble()));
     }
 }
