@@ -13,6 +13,10 @@ Editar <i>[project]/.git/config</i> e adicionar:
     name = <nome>
     email = <e-mail>
 
+Se possível, adicionar na opção [branch "<i>branch</i>"]
+
+    mergeoptions = --no-ff
+
 
 - Alteração do Idioma do NetBeans
 
